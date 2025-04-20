@@ -1,0 +1,22 @@
+.hero-text p {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description__box {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.hero-text h2 {
+  /* background-color: yellow; */
+}
+
+.hero {
+  background: linear-gradient(to left, #414141, #ffffff) !important;
+}

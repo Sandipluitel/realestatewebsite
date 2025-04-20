@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - EcoNest</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to left, #d5d5d5, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background-color: #f8e8e8;
+      color: #EB2D30;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #EB2D30;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      text-decoration: underline;
+    }
+
+    .about-section {
+      padding: 3rem 5%;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      color: #eb2d30;
+    }
+
+    .about-section p {
+      max-width: 800px;
+      margin: 1.5rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .team-section {
+      background-color: #fff;
+      padding: 3rem 5%;
+    }
+
+    .team-section h3 {
+      text-align: center;
+      color: #eb2d30;
+      margin-bottom: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .team-member {
+      background: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h4 {
+      margin: 0.5rem 0 0.25rem;
+      color: #eb2d30;
+    }
+
+    .team-member p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer {
+      background-color: #eb2d30;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/navigation.css">
+</head>
+<body>
+
+  <header>
+    <h1>About EcoNest</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listing</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      EcoNest is a real estate platform focused on sustainable living. We connect buyers and renters with environmentally conscious properties that balance affordability, comfort, and green design. Our mission is to build a future where every home supports a healthier planet.
+    </p>
+  </section>
+
+  <section class="team-section">
+    <h3>Meet Our Team</h3>
+    <div class="team-grid" id="team-container">
+      <!-- Dynamic team members will be inserted here -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EcoNest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const team = [
+      {
+        name: "Sophia Green",
+        role: "Founder & CEO",
+        img: "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      {
+        name: "James Oak",
+        role: "Chief Sustainability Officer",
+        img: "https://randomuser.me/api/portraits/men/52.jpg"
+      },
+      {
+        name: "Lena Woods",
+        role: "Property Advisor",
+        img: "https://randomuser.me/api/portraits/women/65.jpg"
+      },
+      {
+        name: "Marco Fern",
+        role: "Community Manager",
+        img: "https://randomuser.me/api/portraits/men/34.jpg"
+      }
+    ];
+
+    const container = document.getElementById('team-container');
+    team.forEach(member => {
+      const div = document.createElement('div');
+      div.className = 'team-member';
+      div.innerHTML = `
+        <img src="${member.img}" alt="${member.name}">
+        <h4>${member.name}</h4>
+        <p>${member.role}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>

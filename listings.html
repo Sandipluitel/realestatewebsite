@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Listings - EcoNest</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to left, #d5d5d5, #ffffff);
+      margin: 0;
+    }
+
+    header {
+      background-color:#f8e8e8;
+      color: #EB2D30;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #EB2D30;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .property-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .property-info {
+      padding: 1.5rem;
+    }
+
+    .property-info h3 {
+      margin-top: 0;
+      color: #eb2d30;
+    }
+
+    .property-info p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .nav-buttons button {
+      background-color: #eb2d30;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #eb2d30;
+    }
+
+    footer {
+      background-color: #eb2d30;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/navigation.css">
+
+</head>
+<body>
+
+  <header>
+    <h1>Available Listings</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home page</a></li>
+        <li><a href="listings.html" class="active">Listing</a></li>
+        <li><a href="agents.html">Our Agents</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="propertyContainer" class="property-card">
+      <!-- Dynamic property info gets injected here -->
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevProperty()">Previous</button>
+      <button onclick="nextProperty()">Next</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 EcoNest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const properties = [
+      {
+        title: "Luxury Villa in Surry Hills",
+        image: "assets/property/prop1.jpg",
+        price: "AUD 850,000",
+        details: "4 Bed • 3 Bath • Garden • Garage • Quiet neighborhood with nearby schools.",
+      },
+      {
+        title: "Farm House in Hornsby",
+        image: "assets/property/prop2.jpg",
+        price: "AUD 620,000",
+        details: "2 Bed • 2 Bath • Balcony • Gym Access • Excellent location in central London.",
+      },
+      {
+        title: " Luxary Condo in  Palm Beach",
+        image: "assets/property/prop3.jpg",
+        price: "AUD 4,000,000",
+        details: "3 Bed • 2 Bath • Solar Panels • Fireplace • Peaceful views and nature trails.",
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function showProperty(index) {
+      const property = properties[index];
+      const container = document.getElementById('propertyContainer');
+      container.innerHTML = `
+        <img src="${property.image}" alt="${property.title}">
+        <div class="property-info">
+          <h3>${property.title}</h3>
+          <p><strong>Price:</strong> ${property.price}</p>
+          <p>${property.details}</p>
+        </div>
+      `;
+    }
+
+    function nextProperty() {
+      currentIndex = (currentIndex + 1) % properties.length;
+      showProperty(currentIndex);
+    }
+
+    function prevProperty() {
+      currentIndex = (currentIndex - 1 + properties.length) % properties.length;
+      showProperty(currentIndex);
+    }
+
+    // Initialize with first property
+    showProperty(currentIndex);
+  </script>
+
+</body>
+</html>

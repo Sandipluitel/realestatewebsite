@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Agents - EcoNest</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to left, #d5d5d5, #ffffff);
+      margin: 0;
+    }
+
+    header {
+      background-color:#f8e8e8;
+      color: #EB2D30;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #EB2D30;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    .agent-section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .agent-section h2 {
+      text-align: center;
+      color: #eb2d30;
+      margin-bottom: 2rem;
+    }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .agent-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .agent-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .agent-info {
+      padding: 1rem;
+    }
+
+    .agent-info h3 {
+      margin: 0 0 0.5rem;
+      color: #eb2d30;
+    }
+
+    .agent-info p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #eb2d30;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/navigation.css">
+</head>
+<body>
+
+  <header>
+    <h1>Meet Our Agents</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home page</a></li>
+        <li><a href="listings.html">Listing</a></li>
+        <li><a href="agents.html" class="active">Our Agents</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="agent-section">
+    <h2>Top Real Estate Experts</h2>
+    <div class="agent-grid">
+
+      <div class="agent-card">
+        <img src="assets/agents/person1.jpg" alt="Emily Carter" />
+        <div class="agent-info">
+          <h3>Dave Carter
+          </h3>
+          <p> 0412345698 </p>
+          <p>  Expert in suburban homes and new family residences.</p>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <img src="assets/agents/person2.jpg" alt="Daniel Lewis" />
+        <div class="agent-info">
+          <h3>Daniel Lewis</h3>
+          <p> 0498614759 </p>
+          <p> Luxury apartment specialist with 10+ years experience.</p>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <img src="assets/agents/person3.jpg" alt="David Khadka" />
+        <div class="agent-info">
+          <h3>David Khadka </h3>
+          <p> 0445689611 </p>
+          <p> Focused on eco-friendly and modern smart homes.</p>
+        </div>
+      </div>
+
+      <div class="agent-card">
+        <img src="assets/agents/person5.jpg" alt="Isak Ali" />
+        <div class="agent-info">
+          <h3>Isak Ali </h3>
+          <p> 0440689691 </p>
+          <p> Focuses on Antic Property.</p>
+        </div>
+        </div>
+      <div class="agent-card">
+        <img src="assets/agents/person4.jpg" alt="Michael Kim" />
+        <div class="agent-info">
+          <h3>Michael Kim</h3>
+          <p> 0499558739 </p>
+          <p>  High-rise condo and investment property guru.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EcoNest. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
